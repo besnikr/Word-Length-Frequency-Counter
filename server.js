@@ -24,7 +24,7 @@ app.post('/word-length', (req, res) => {
     res.send(returnObj);
 });
 
-app.listen(port, () => console.log(`Server is listening on port ${port}.`));
+app.listen(80, () => console.log(`Server is listening on port ${port}.`));
 
 function resultObject(sentence) {
 
@@ -43,12 +43,14 @@ function resultObject(sentence) {
 
 function maxTenLetters(sentence) {
     const splitArr = sentence.split(" ");
+    let toReturn = true;
 
     splitArr.forEach(element => {
-       if (element.length > 10) {
-           return false;
+        if (element.length > 10) {
+           // There is a word that exceeds ten letters.
+           toReturn = false;
        }
     });
 
-    return true;
+    return toReturn;
 }

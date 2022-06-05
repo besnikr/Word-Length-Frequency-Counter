@@ -1,7 +1,7 @@
 const axios = require('axios');
 
-axios.post('https://labthreebesnik.herokuapp.com/word-length', {
-    sentence: 'sample text for the word length frequency counter'
+axios.post('/word-length', {
+    sentence: "random text for the word length frequency counter"
 
 }).then(function (res) {
 
