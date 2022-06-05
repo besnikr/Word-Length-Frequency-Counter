@@ -24,7 +24,7 @@ app.post('/word-length', (req, res) => {
     res.send(returnObj);
 });
 
-app.listen(80, () => console.log(`Server is listening on port ${port}.`));
+app.listen(port, () => console.log(`Server is listening on port ${port}.`));
 
 function resultObject(sentence) {
 
