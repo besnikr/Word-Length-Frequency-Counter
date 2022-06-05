@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 axios.post('https://labthreebesnik.herokuapp.com/word-length', {
-    sentence: 'lorem ipsum dolor si amet consectetur adipiscing elit sed do'
+    sentence: 'sample text for the word length frequency counter'
 
 }).then(function (res) {
 

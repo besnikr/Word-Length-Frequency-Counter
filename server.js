@@ -13,7 +13,7 @@ app.post('/word-length', (req, res) => {
     const sentence = req.body.sentence;
 
     // In case any word in the sentence has a length greater than ten, send an error message
-    if (maxTenLetters() === false) {
+    if (maxTenLetters(sentence) === false) {
         res.send("Error: You cannot choose words that have letters which are greater than ten.")
         return;
     }
