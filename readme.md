@@ -12,5 +12,5 @@ The server is hosted in the cloud with Heroku as the provider.
 ## Installation
 
 ```sh
-npm install axios express body-parser cors 
+npm install all
 ```
