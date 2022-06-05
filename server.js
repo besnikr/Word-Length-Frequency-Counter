@@ -12,11 +12,9 @@ app.use(bodyParser.json());
 app.post('/word-length', (req, res) => {
     const sentence = req.body.sentence;
 
-    // Check if sentence contains max 10 words
-    const wordCount = sentence.split(' ').length;
-    if (wordCount > 10) {
-        console.log("ERROR. Max 10 words allowed!");
-        res.send("ERROR. Max 10 words allowed!");
+    // In case any word in the sentence has a length greater than ten, send an error message
+    if (maxTenLetters() === false) {
+        res.send("Error: You cannot choose words that have letters which are greater than ten.")
         return;
     }
 
@@ -41,4 +39,16 @@ function resultObject(sentence) {
     const obj = Object.fromEntries(sortedMap);
 
     return obj;
+}
+
+function maxTenLetters(sentence) {
+    const splitArr = sentence.split(" ");
+
+    splitArr.forEach(element => {
+       if (element.length > 10) {
+           return false;
+       }
+    });
+
+    return true;
 }
